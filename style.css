@@ -24,6 +24,12 @@ section .container {
     text-align: center; 
 }
 
+section .container img {
+    max-width: 100%; 
+    height: auto; 
+    width: 400px; 
+}
+
 section h1{
     font-size: 60px;
 }
@@ -75,6 +81,8 @@ section .text-card p {
     transform: translateY(0px);
     opacity: 1;
 }
+
+
 
 @media (max-width: 900px){
     section h1{
