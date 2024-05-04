@@ -1,11 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Front</title>
+    <title>Portfolio Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Hello
+    <section>
+        <h1>JASON.</h1>
+    </section>
+    <section>
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="text-cards">
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="text-cards">
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="text-cards">
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="text-cards">
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW</p>
+                </div>
+                <div class="text-card">
+                    <h3>Title</h3>
+                    <p>MEOW MEOW sajdhlwqndqwdnqwdnnqwd nqwdknqwlndnqwdkwqld  
+                        lqjwdnqljwdwqdnwqdnwkdknqn sdasda
+                    sdaasd sadsda sad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+
+                if (revealtop < windowheight - revealpoint){
+                    reveals[i].classList.add('active');
+
+                } else {
+
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
 </body>
 </html>
