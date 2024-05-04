@@ -85,11 +85,13 @@ section .text-card p {
 
 
 @media (max-width: 900px){
-    section h1{
-        font-size: 40px;
+    section .text-cards {
+        flex-direction: column;
+        align-items: center;
     }
 
-    section .cards{
-        flex-direction: column;
+    section .text-card {
+        flex: 0 0 calc(100% - 40px); 
+        max-width: calc(100% - 40px); 
     }
 }
