@@ -37,8 +37,8 @@ body {
     transform: translate(-50%, -50%) rotate(30deg) scale(0.5);
     max-width: 400px;
     z-index: 0;
-    bottom: 2%;
-    left: 63%;
+    bottom: -10%;
+    left: 73%;
 }
 
 section {
@@ -131,7 +131,17 @@ section .text-card.Email {
     background: none;
 }
 
+.text-cards.skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, auto); 
+    grid-gap: 20px; 
+    justify-content: center;
+}
+
 section .text-card.skills {
+    width: 100%;
+    margin-bottom: 20px;
     background: white;
     margin: 20px;
     padding: 20px;
@@ -210,5 +220,28 @@ section .text-card.skills .text {
     section .text-card {
         flex: 0 0 calc(100% - 40px); 
         max-width: calc(100% - 40px); 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .text-cards.skills {
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-gap: 20px;
+        justify-content: center;
+        margin-left: 67px;
+    }
+    section .text-card.skills {
+        width: 200px; 
+        height: 200px; 
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .text-cards.skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        justify-content: center;
     }
 }
