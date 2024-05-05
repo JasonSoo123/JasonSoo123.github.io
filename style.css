@@ -71,7 +71,7 @@ section .text-card {
     align-items: center;
 }
 
-section .text-card.ig {
+section .text-card.github {
     background: none;
 }
 
@@ -84,7 +84,7 @@ section .text-card.LinkedIn img {
     height: auto;
 }
 
-section .text-card.ig img {
+section .text-card.github img {
     width: 200px;
     height: auto;
 }
