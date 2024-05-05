@@ -12,6 +12,35 @@ body {
     background: #1D212B;
 }
 
+#img1, #img2, #img3 {
+    position: absolute;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+#img1 {
+    transform: translate(-50%, -50%) rotate(-15deg) scale(0.7);
+    max-width: 250px;
+    z-index: 0;
+    bottom: 50%;
+    left: 20%;
+}
+
+#img2 {
+    transform: translate(-50%, -50%) rotate(-10deg) scale(0.6);
+    max-width: 150px;
+    z-index: 0;
+    bottom: 60%;
+    left: 70%;
+}
+
+#img3 {
+    transform: translate(-50%, -50%) rotate(30deg) scale(0.5);
+    max-width: 400px;
+    z-index: 0;
+    bottom: 2%;
+    left: 63%;
+}
+
 section {
     min-height: 100vh;
     display: flex;
@@ -19,6 +48,8 @@ section {
     align-items: center;
     margin-top: 50px;
     color: white;
+    position: relative;
+    padding-top: 100px;
 }
 
 section .container {
@@ -35,6 +66,8 @@ section .container img {
 
 section h1 {
     font-size: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 section h2 {
@@ -75,17 +108,17 @@ section .text-card.github {
     background: none;
 }
 
+section .text-card.github img {
+    width: 200px;
+    height: auto;
+}
+
 section .text-card.LinkedIn {
     background: none;
 }
 
 section .text-card.LinkedIn img {
     width: 125px;
-    height: auto;
-}
-
-section .text-card.github img {
-    width: 200px;
     height: auto;
 }
 
@@ -96,12 +129,6 @@ section .text-card.Email img {
 
 section .text-card.Email {
     background: none;
-}
-section .text-cards.skills {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    justify-content: center; 
 }
 
 section .text-card.skills {
@@ -141,13 +168,10 @@ section .text-card.skills .logo img {
 }
 
 section .text-card.skills.html .logo img {
-
     width: 135px;
     height: auto;
     transition: opacity 0.7s ease;
 }
-
-
 
 section .text-card.skills .text {
     position: absolute;
