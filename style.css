@@ -115,6 +115,7 @@ section .text-card.skills .logo img {
 }
 
 section .text-card.skills.html .logo img {
+    overflow: hidden;
     width: 140px;
     height: auto;
     transition: opacity 0.7s ease;
