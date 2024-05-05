@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Work Sans", sans-serif;
 }
 
-body{
+body {
     background: #1D212B;
 }
 
-section{
+section {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
     color: white;
 }
 
@@ -25,22 +26,28 @@ section .container {
 }
 
 section .container img {
-    max-width: 100%; 
+    max-width: 100%;
+    margin-top: 20px; 
     height: auto; 
     width: 400px; 
 }
 
-section h1{
+section h1 {
     font-size: 60px;
 }
 
-section h2{
+section h2 {
     font-size: 40px;
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-section .cards{
+section p {
+    margin-bottom: 20px;
+}
+
+section .cards {
     display: flex;
 }
 
@@ -63,53 +70,84 @@ section .text-card {
     align-items: center;
 }
 
-section .text-card h3 {
-    font-size: 30px;
+section .text-cards.skills {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    justify-content: center; 
+}
+
+section .text-card.skills {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    border-radius: 50%;
+    width: 200px; 
+    height: 200px; 
+    transition: transform 0.7s ease; 
+    position: relative;
+    overflow: hidden;
+}
+
+section .text-card.skills:hover {
+    transform: scale(1.1);
+}
+
+section .text-card.skills:hover .logo img {
+    opacity: 0.5;
+}
+
+section .text-card.skills:hover .text {
+    opacity: 1;
+}
+
+section .text-card.skills .logo img {
+    width: 120px;
+    height: auto;
+    transition: opacity 0.5s ease;
+}
+
+section .text-card.skills.html .logo img {
+    width: 140px;
+    height: auto;
+    transition: opacity 0.5s ease;
+}
+
+section .text-card.skills .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
     text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    margin-top: 0; 
+    transition: opacity 0.5s ease;
+    background-color: #1d212bba;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-section .text-card p {
-    text-align: center;
-    font-size: 18px;
-    margin: 0;
-}
-
-section .text-card ul {
-    list-style-type: none;
-    padding: 0; 
-}
-
-section .text-card ul li {
-    font-size: 18px; 
-    margin-bottom: 10px; 
-}
-
-section .text-card ul b {
-    display: block;
-    height: 1px;
-    width: 100%;
-    background-color: white;
-    margin: 10px 0;
-}
-
-.reveal{
+.reveal {
     position: relative;
     transform: translateY(150px);
     opacity: 0;
     transition: all 2s ease;
 }
 
-.reveal.active{
+.reveal.active {
     transform: translateY(0px);
     opacity: 1;
 }
 
-
-
-@media (max-width: 900px){
+@media (max-width: 900px) {
     section .text-cards {
         flex-direction: column;
         align-items: center;

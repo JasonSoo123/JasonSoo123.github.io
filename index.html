@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Page</title>
+    <title>Project Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,7 +20,6 @@
                     <ul>
                         <li>Name: Jason Soo</li>
                         <li>Age: 19</li>
-                        
                     </ul>
                 </div>
                 <div class="text-card">
@@ -32,22 +31,61 @@
                         <li>GPA: 3.41</li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
     <section>
         <div class="container reveal">
             <h2>Skills</h2>
-            <div class="text-cards">
-                <div class="text-card">
-        
+            <p>Programming languages I have experience with...</p>
+            <div class="text-cards skills">
+                <div class="text-card skills html">
+                    <div class="logo">
+                        <img src="html5.png" alt="HTML">
+                    </div>
+                    <div class="text">
+                        HTML
+                    </div>
                 </div>
-                <div class="text-card">
-               
+                <div class="text-card skills css">
+                    <div class="logo">
+                        <img src="css.png" alt="CSS">
+                    </div>
+                    <div class="text">
+                        CSS
+                    </div>
                 </div>
-                <div class="text-card">
-               
+                <div class="text-card skills js">
+                    <div class="logo">
+                        <img src="js.png" alt="JS">
+                    </div>
+                    <div class="text">
+                        JavaScript
+                    </div>
+                </div>
+                <div class="text-card skills c">
+                    <div class="logo">
+                        <img src="c.png" alt="C">
+                    </div>
+                    <div class="text">
+                        C
+                    </div>
+                </div>
+                <div class="text-card skills cpp">
+                    <div class="logo">
+                        <img src="c++.png" alt="C++">
+                    </div>
+                    <div class="text">
+                        C++
+                    </div>
+                </div>
+                <div class="text-card skills python">
+                    <div class="logo">
+                        <img src="python.png" alt="Python">
+                    </div>
+                    <div class="text">
+                        Python
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,7 +111,7 @@
     </section>
     <section>
         <div class="container reveal">
-            <h2>Socials</h2>
+            <h2>Contact Me</h2>
             <div class="text-cards">
                 <div class="text-card">
                     <h3>Instagram</h3>
@@ -84,8 +122,8 @@
                     <p>MEOW MEOW</p>
                 </div>
                 <div class="text-card">
-                    <h3>Discord</h3>
-                    <p>Username: sooupz</p>
+                    <h3>Email</h3>
+                    <p>jks74@sfu.ca</p>
                 </div>
             </div>
         </div>
@@ -104,9 +142,7 @@
 
                 if (revealtop < windowheight - revealpoint){
                     reveals[i].classList.add('active');
-
                 } else {
-
                     reveals[i].classList.remove('active');
                 }
             }
