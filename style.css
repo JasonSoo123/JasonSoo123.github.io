@@ -71,6 +71,32 @@ section .text-card {
     align-items: center;
 }
 
+section .text-card.ig {
+    background: none;
+}
+
+section .text-card.LinkedIn {
+    background: none;
+}
+
+section .text-card.LinkedIn img {
+    width: 125px;
+    height: auto;
+}
+
+section .text-card.ig img {
+    width: 200px;
+    height: auto;
+}
+
+section .text-card.Email img {
+    width: 500px;
+    height: auto;
+}
+
+section .text-card.Email {
+    background: none;
+}
 section .text-cards.skills {
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
