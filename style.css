@@ -152,8 +152,8 @@ section .text-card.skills {
     align-items: center;
     text-align: center; 
     border-radius: 50%;
-    width: 200px; 
-    height: 200px; 
+    width: 150px; 
+    height: 150px; 
     transition: transform 0.7s ease; 
     position: relative;
     overflow: hidden;
@@ -172,13 +172,13 @@ section .text-card.skills:hover .text {
 }
 
 section .text-card.skills .logo img {
-    width: 120px;
+    width: 70px;
     height: auto;
     transition: opacity 0.7s ease;
 }
 
 section .text-card.skills.html .logo img {
-    width: 135px;
+    width: 85px;
     height: auto;
     transition: opacity 0.7s ease;
 }
@@ -229,11 +229,15 @@ section .text-card.skills .text {
         grid-template-columns: 1fr; 
         grid-gap: 20px;
         justify-content: center;
-        margin-left: 67px;
+        align-items: center;
     }
     section .text-card.skills {
-        width: 200px; 
-        height: 200px; 
+        width: 150px; 
+        height: 150px; 
+    }
+
+    section h2 {
+        font-size: 30px;
     }
 }
 
