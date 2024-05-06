@@ -159,6 +159,20 @@ section .text-card.skills {
     overflow: hidden;
 }
 
+section .text-card.github,
+section .text-card.LinkedIn,
+section .text-card.Email {
+    transition: transform 0.7s ease;
+    position: relative;
+    overflow: hidden; 
+}
+
+section .text-card.github:hover,
+section .text-card.LinkedIn:hover,
+section .text-card.Email:hover {
+    transform: scale(1.1);
+}
+
 section .text-card.skills:hover {
     transform: scale(1.1);
 }
