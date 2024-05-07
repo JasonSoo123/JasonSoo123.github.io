@@ -52,6 +52,7 @@ section {
     padding-top: 100px;
 }
 
+
 section .container {
     margin: 100px;
     text-align: center; 
@@ -186,13 +187,17 @@ section .text-card.skills:hover .text {
 }
 
 section .text-card.skills .logo img {
-    width: 70px;
+    width: 90px;
     height: auto;
     transition: opacity 0.7s ease;
 }
 
+section .text-card.skills.html .logo {
+    position: relative;
+    bottom: 10px;
+}
 section .text-card.skills.html .logo img {
-    width: 85px;
+    width: 105px;
     height: auto;
     transition: opacity 0.7s ease;
 }
