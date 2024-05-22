@@ -98,6 +98,22 @@
                         Python
                     </div>
                 </div>
+                <div class="text-card skills java">
+                    <div class="logo">
+                        <img src="java.png" alt="Java">
+                    </div>
+                    <div class="text">
+                        Java
+                    </div>
+                </div>
+                <div class="text-card skills RISCV">
+                    <div class="logo">
+                        <img src="RISCV.png" alt="RISCV">
+                    </div>
+                    <div class="text">
+                        RISC-V
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -124,8 +140,13 @@
             <div class="project">
                 <h3>Simple Processor Pipeline Simulator</h3>
                 <div class="project-details">
-                    <img src="Pipeline.png" alt="SImple Processor Pipeline Simulator">
-                    <p>This project is a simulator for a simple processor pipeline developed in C++. It demonstrates my understanding of computer architecture and low-level programming.</p>
+                    <p>This project is a simulator for a simple processor pipeline developed in C++. It demonstrates my understanding of computer architecture and low-level programming. 
+                        <ul>
+                            <li>Can run around 1 million instructions</li>
+                            <li>Simulates pipeline stages including Fetch, Decode, Execute, Memory Access, and Write Back</li>
+                            <li>Includes hazard detection and forwarding mechanisms</li>
+                        </ul>
+                    </p>
                     <a href="https://github.com/JasonSoo123/Simple-Processor-Pipeline-Simulator">GitHub</a>
                 </div>
             </div>
@@ -153,24 +174,6 @@
             </div>
         </div>
     </section>
-    <script type="text/javascript">
-        window.addEventListener('scroll', reveal);
-
-        function reveal(){
-            var reveals = document.querySelectorAll('.reveal');
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowheight = window.innerHeight;
-                var revealtop = reveals[i].getBoundingClientRect().top;
-                var revealpoint = 150;
-
-                if (revealtop < windowheight - revealpoint){
-                    reveals[i].classList.add('active');
-                } else {
-                    reveals[i].classList.remove('active');
-                }
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
