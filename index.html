@@ -1,181 +1,381 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jason Soo</title>
+  <meta name="description" content="Luis Tanafranca — Computing Science student at SFU. Building Unify Social." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --surface: #161616;
+      --surface-2: #1c1c1c;
+      --surface-hover: #1a1a1a;
+      --border: #242424;
+      --border-strong: #2e2e2e;
+      --text: #ededed;
+      --muted: #9a9a9a;
+      --accent: #38517e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      background: linear-gradient(to bottom, #0d0f14 0%, #2c2634 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem;
+    }
+
+    section { margin-block: clamp(2.5rem, 5vw, 3.5rem); }
+    section:first-of-type { margin-top: 0; }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 58px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-top: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.125rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 12px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    p { margin: 0; color: var(--muted); }
+
+    a { color: inherit; text-decoration: none; transition: color 160ms ease; }
+    a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero { text-align: center; }
+
+    .avatar {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border-strong);
+      display: block;
+      margin: 0 auto;
+    }
+
+    .bio {
+      margin-top: 0.75rem;
+      font-size: 1.0625rem;
+      color: var(--muted);
+      max-width: 38rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .links {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+    }
+
+    .links a {
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      padding: 6px 16px;
+      border-radius: 999px;
+      transition: background 160ms ease, color 160ms ease;
+    }
+    .links a:hover {
+      background: var(--accent);
+      color: #0d0f14;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid transparent;
+      border-radius: 14px;
+      padding: 1.25rem 1.25rem;
+      transition: border-left-color 200ms ease, background 200ms ease;
+    }
+    .card + .card { margin-top: 0.875rem; }
+    .card:hover {
+      border-left-color: var(--accent);
+      background: var(--surface-hover);
+    }
+
+    .card-image {
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .card h3 { font-size: 1rem; font-weight: 600; }
+
+    .card .meta {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .card .desc {
+      margin-top: 0.375rem;
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
+    .chip-row {
+      margin-top: 0.875rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.625rem;
+      border-radius: 999px;
+      letter-spacing: 0.01em;
+    }
+
+    .card-links {
+      margin-top: 0.875rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.875rem;
+    }
+    .card-links a {
+      color: var(--accent);
+      opacity: 0.85;
+    }
+    .card-links a:hover { opacity: 1; }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skills .chip {
+      font-size: 0.8125rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--surface);
+      transition: border-color 160ms ease, color 160ms ease;
+    }
+    .skills .chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      main { padding: 2rem 1.25rem; }
+      .avatar { width: 140px; height: 140px; }
+      h1 { font-size: 40px; }
+      .bio { font-size: 1rem; }
+      .card { padding: 1.125rem 1rem; }
+      .card .meta { white-space: normal; }
+      .card-image { max-height: 220px; }
+    }
+  </style>
 </head>
 <body>
-    <section>
-        <h1>JASON.</h1>
-        <img src="hockey.png" alt="hockey stick" id="img1">
-        <img src="computer.png" alt="computer" id="img2">
-        <img src="cat.png" alt="cat" id="img3">  
+  <main>
+    <section class="hero">
+      <img class="avatar" src="profile.jpg" alt="Jason Soo" />
+      <h1>Jason Soo</h1>
+      <p class="bio">Computing Science/Mathematics student at SFU building fun and inspiring software.</p>
+      <div class="links">
+        <a href="https://github.com/JasonSoo123" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/jasonsoo123/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:jks74@sfu.ca">Email</a>
+      </div>
     </section>
+
     <section>
-        <div class="container reveal">
-            <h2>About Me</h2>
-            <div class="text-cards">
-                <div class="text-card">
-                    <h3>Info</h3>
-                    <ul>
-                        <li>Name: Jason Soo</li>
-                        <li>Age: 21</li>
-                    </ul>
-                </div>
-                <div class="text-card">
-                    <h3>Education</h3>
-                    <ul>
-                        <li>Simon Fraser University, <b></b> 2022-Present</li>
-                        <li>Joint Major in Computing Science & Math, Bachelor of Science</li>
-                        <li>GPA: 3.56</li>
-                    </ul>
-                </div>
-            </div>
+      <h2>Projects</h2>
+
+      <article class="card">
+        <img class="card-image" src="" alt="PikaBot screenshot" />
+        <div class="card-header">
+          <h3>PikaBot</h3>
         </div>
+        <p class="desc"></p>
+        <div class="chip-row">
+          <span class="chip">Python</span>
+          <span class="chip">JavaScript</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/JasonSoo123/pokemon-champions-vgc-model" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="turtle-trips.png" alt="Turtle Trips AI screenshot" />
+        <div class="card-header">
+          <h3>Turtle Trips AI</h3>
+        </div>
+        <p class="desc">Hackathon project — Flask web app that generates multi-day travel itineraries. Integrated the Gemini API for structured itinerary output and Google Maps Platform for interactive route visualization.</p>
+        <div class="chip-row">
+          <span class="chip">Python</span>
+          <span class="chip">Flask</span>
+          <span class="chip">Gemini API</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/ltanafranca1004/AI-Travel-Planner" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="brainrotlingo.jpg" alt="BrainRot Lingo screenshot" />
+        <div class="card-header">
+          <h3>BrainRot Lingo</h3>
+        </div>
+        <p class="desc">Hackathon project — React web app that bridges the vocabulary gap between newer and older gen.
+             Integrated the GPT 3.5 API for the built-in translation feature and the Youtube API to bridge the culture gap between generations.</p>
+        <div class="chip-row">
+          <span class="chip">TypeScript</span>
+          <span class="chip">React</span>
+          <span class="chip">GPT 3.5 API</span>
+          <span class="chip">Youtube API</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/JasonSoo123/brainrot-lingo" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="NutriFit.png" alt="NutriFit screenshot" />
+        <div class="card-header">
+          <h3>NutriFit</h3>
+        </div>
+        <p class="desc">Group course project — Spring Boot web app for personalized meal planning and nutrition tracking. Integrated the Edamam recipe API with secure auth, an admin dashboard, and a community Q&amp;A feature.</p>
+        <div class="chip-row">
+          <span class="chip">Java</span>
+          <span class="chip">Spring Boot</span>
+          <span class="chip">Edamam API</span>
+          <span class="chip">Docker</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/JasonSoo123/NutriFit" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
     </section>
+
     <section>
-        <div class="container reveal">
-            <h2>Skills</h2>
-            <p>Programming languages I have experience with...</p>
-            <div class="text-cards skills">
-                <div class="text-card skills html">
-                    <div class="logo">
-                        <img src="html5.png" alt="HTML">
-                    </div>
-                    <div class="text">
-                        HTML
-                    </div>
-                </div>
-                <div class="text-card skills css">
-                    <div class="logo">
-                        <img src="css.png" alt="CSS">
-                    </div>
-                    <div class="text">
-                        CSS
-                    </div>
-                </div>
-                <div class="text-card skills js">
-                    <div class="logo">
-                        <img src="js.png" alt="JS">
-                    </div>
-                    <div class="text">
-                        JavaScript
-                    </div>
-                </div>
-                <div class="text-card skills c">
-                    <div class="logo">
-                        <img src="c.png" alt="C">
-                    </div>
-                    <div class="text">
-                        C
-                    </div>
-                </div>
-                <div class="text-card skills c sharp">
-                    <div class="logo">
-                        <img src="csharp.png" alt="C#">
-                    </div>
-                    <div class="text">
-                        C#
-                    </div>
-                </div>
-                <div class="text-card skills cpp">
-                    <div class="logo">
-                        <img src="c++.png" alt="C++">
-                    </div>
-                    <div class="text">
-                        C++
-                    </div>
-                </div>
-                <div class="text-card skills python">
-                    <div class="logo">
-                        <img src="python.png" alt="Python">
-                    </div>
-                    <div class="text">
-                        Python
-                    </div>
-                </div>
-                <div class="text-card skills java">
-                    <div class="logo">
-                        <img src="java.png" alt="Java">
-                    </div>
-                    <div class="text">
-                        Java
-                    </div>
-                </div>
-                <div class="text-card skills RISCV">
-                    <div class="logo">
-                        <img src="RISCV.png" alt="RISCV">
-                    </div>
-                    <div class="text">
-                        RISC-V
-                    </div>
-                </div>
-            </div>
-        </div>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="chip">Python</span>
+        <span class="chip">C++</span>
+        <span class="chip">C</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">React</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">Docker</span>
+      </div>
     </section>
+
     <section>
-        <div class="container reveal">
-            <h2>Projects</h2>
-            <p>Last Updated: May 8, 2024</p>
-            <div class="project">
-                <h3>Duck Hunt</h3>
-                <div class="project-details">
-                    <img src="duckhunt.png" alt="Duck Hunt">
-                    <p>A classic duck hunting game developed using C# and the Unity game engine. It's a fun project to showcase my frontend development skills.</p>
-                </div>
-            </div>
-            <div class="project">
-                <h3>The Hungry Hippo</h3>
-                <div class="project-details">
-                    <img src="hippo.png" alt="Hippo">
-                    <p>A game using Unreal engine about a hippo wandering around and eating. Still in progress</p>
-                </div>
-            </div>
-            <div class="project">
-                <h3>NutriFit</h3>
-                <div class="project-details">
-                    <img src="NutriFit.png"  alt="NutriFit">
-                    <p>NutriFit is a nutrition website developed using HTML, JavaScript, CSS, and Java.This website helps you find recipes and improve your health.</p>
-                </div>
-            </div>
-            <div class="project">
-                <h3>Simple Processor Pipeline Simulator</h3>
-                <div class="project-details">
-                    <p>This project is a simulator for a simple processor pipeline developed in C++. It demonstrates my understanding of computer architecture and low-level programming. 
-                        <ul>
-                            <li>Can run around 1 million instructions</li>
-                            <li>Simulates pipeline stages including Fetch, Decode, Execute, Memory Access, and Write Back</li>
-                            <li>Includes hazard detection and forwarding mechanisms</li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
+      <h2>Experience</h2>
+
+      <article class="card">
+        <div class="card-header">
+          <h3>Mathnasium · Math Instructor</h3>
+          <span class="meta"> Sep 2025 – Present</span>
         </div>
-    </section>    
-    <section>
-        <div class="container reveal">
-            <h2>Contacts</h2>
-            <div class="text-cards contact">
-                <div class="text-card github">
-                    <a href="https://github.com/JasonSoo123">
-                        <img src="github.png" alt="github">
-                    </a>
-                </div>
-                <div class="text-card LinkedIn">
-                    <a href="https://linkedin.com/in/jasonsoo123">
-                        <img src="LinkedIn.png" alt="LinkedIn">
-                    </a>
-                </div>
-                <div class="text-card Email">
-                    <a href="mailto:soojason4@gmail.com">
-                        <img src="gmail.png" alt="gmail">
-                    </a>
-                </div>
-            </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <h3>London Drugs · Stocks and Services/ Cashier</h3>
+          <span class="meta"> Jul 2021 – Sep 2022</span>
         </div>
+      </article>
     </section>
-    <script src="script.js"></script>
+
+    <section>
+        <h2>Volunteer Experience</h2>
+
+        <article class="card">
+            <div class="card-header">
+                <h3>Simon Fraser University · Calc Connect Peer Mentor</h3>
+                 <span class="meta"> Sep 2023 – Dec 2025</span>
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+
+        <article class="card">
+            <div class="card-header">
+                <h3>Simon Fraser University · Mathematics and Computing Science Joint Major</h3>
+                 <span class="meta"> Sep 2022 – Present</span>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+      © 2026 Jason Soo
+    </footer>
+  </main>
 </body>
 </html>
